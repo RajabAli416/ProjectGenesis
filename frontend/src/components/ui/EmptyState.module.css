@@ -1,0 +1,105 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: var(--sp-6) var(--sp-4);
+  min-height: 120px;
+  color: var(--fg-3);
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.glyph {
+  width: 28px;
+  height: 28px;
+  border: 1px dashed var(--line-3);
+  border-radius: var(--r-2);
+  display: grid;
+  place-items: center;
+  color: var(--fg-4);
+  margin-bottom: var(--sp-1);
+}
+
+.title {
+  font-size: var(--fs-13);
+  color: var(--fg-2);
+  font-weight: 500;
+}
+
+.body {
+  font-size: var(--fs-12);
+  color: var(--fg-3);
+  max-width: 46ch;
+  line-height: var(--lh-normal);
+}
+
+.actions {
+  display: flex;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+}
+
+/* Inline notice used for sample-data and connection messages */
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-2);
+  background: var(--bg-1);
+  font-size: var(--fs-12);
+  color: var(--fg-2);
+  line-height: var(--lh-normal);
+}
+
+.notice > svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--fg-3);
+}
+
+.noticeAttn {
+  border-color: var(--acc-attn-dim);
+}
+
+.noticeAttn > svg {
+  color: var(--acc-attn);
+}
+
+/* Loading / error states */
+.state {
+  padding: var(--sp-4);
+  font-size: var(--fs-12);
+  color: var(--fg-3);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.stateError {
+  color: var(--acc-crit);
+}
+
+.skeleton {
+  display: block;
+  height: 10px;
+  border-radius: var(--r-1);
+  background: var(--line-1);
+  animation: shimmer 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; }
+}

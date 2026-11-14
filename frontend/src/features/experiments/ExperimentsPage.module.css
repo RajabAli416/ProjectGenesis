@@ -1,0 +1,202 @@
+.varGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-3);
+  overflow: hidden;
+  font-size: var(--fs-12);
+}
+
+.varHead {
+  padding: 8px var(--sp-3);
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--line-1);
+  font-size: var(--fs-11);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--fg-3);
+  font-weight: 500;
+}
+
+.varCell {
+  padding: 9px var(--sp-3);
+  border-bottom: 1px solid var(--line-0);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  min-width: 0;
+}
+
+.varRow {
+  display: contents;
+}
+
+.varRow:last-child .varCell {
+  border-bottom: none;
+}
+
+.varKey {
+  color: var(--fg-1);
+}
+
+.varKeyCode {
+  font-family: var(--font-mono);
+  font-size: var(--fs-11);
+  color: var(--fg-3);
+}
+
+.varValue {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--fg-2);
+}
+
+.varDiff {
+  color: var(--fg-0);
+}
+
+.varUnit {
+  color: var(--fg-3);
+  font-size: var(--fs-11);
+}
+
+.reproGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--sp-3);
+}
+
+.reproItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--sp-3);
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-2);
+  background: var(--bg-1);
+  min-width: 0;
+}
+
+.reproLabel {
+  font-size: var(--fs-11);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--fg-3);
+  font-weight: 500;
+}
+
+.reproValue {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-12);
+  color: var(--fg-1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reproUnset {
+  color: var(--fg-4);
+}
+
+.varBlock {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line-0);
+}
+
+.varBlockHead {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--sp-2);
+}
+
+.varBlockTitle {
+  font-size: var(--fs-12);
+  color: var(--fg-1);
+}
+
+.varBlockHint {
+  font-size: var(--fs-11);
+  color: var(--fg-3);
+}
+
+.varEditor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  width: 100%;
+}
+
+.varEditorRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 0.8fr) minmax(0, 0.8fr) minmax(0, 0.5fr) auto;
+  gap: var(--sp-2);
+  align-items: center;
+}
+
+.varEditorRow > * {
+  min-width: 0;
+}
+
+.varEditorRow input,
+.varEditorRow select {
+  width: 100%;
+  min-width: 0;
+}
+
+.varEditorCustom {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 640px) {
+  .varEditorRow {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+.hypPick {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 160px;
+  overflow: auto;
+  width: 100%;
+}
+
+.hypPickItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-12);
+  color: var(--fg-1);
+  cursor: pointer;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-3);
+  overflow: hidden;
+  font-size: var(--fs-12);
+}
+
+.metricDelta {
+  color: var(--acc-sel);
+}
+
+@container detail (max-width: 560px) {
+  .varGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .varKeyCell {
+    grid-column: 1 / -1;
+    border-bottom: none;
+    padding-bottom: 2px;
+  }
+  .varHead.varKeyCell {
+    display: none;
+  }
+}

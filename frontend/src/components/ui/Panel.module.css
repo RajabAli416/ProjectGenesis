@@ -1,0 +1,75 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background: var(--bg-1);
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-3);
+}
+
+.flush {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  height: 36px;
+  padding: 0 var(--sp-3);
+  border-bottom: 1px solid var(--line-1);
+  flex: none;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--fs-11);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--fg-2);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.subtitle {
+  font-size: var(--fs-11);
+  color: var(--fg-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  flex: none;
+}
+
+.body {
+  padding: var(--sp-3);
+  min-height: 0;
+}
+
+.bodyFlush {
+  padding: 0;
+}
+
+.bodyScroll {
+  overflow: auto;
+  flex: 1;
+}
+
+.grow {
+  flex: 1;
+}

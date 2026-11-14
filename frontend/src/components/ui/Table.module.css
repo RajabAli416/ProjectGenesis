@@ -1,0 +1,99 @@
+.wrap {
+  overflow: auto;
+  min-width: 0;
+}
+
+.table {
+  width: 100%;
+  font-size: var(--fs-12);
+  table-layout: auto;
+}
+
+.table th,
+.table td {
+  padding: 0 var(--sp-3);
+  height: 32px;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--line-0);
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--bg-1);
+  font-size: var(--fs-11);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--fg-3);
+  font-weight: 500;
+  height: 30px;
+  border-bottom: 1px solid var(--line-1);
+  user-select: none;
+}
+
+.sortable {
+  cursor: pointer;
+}
+
+.sortable:hover {
+  color: var(--fg-2);
+}
+
+.sortIcon {
+  display: inline-block;
+  margin-left: 4px;
+  opacity: 0.6;
+}
+
+.num {
+  text-align: right !important;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.row {
+  transition: background-color var(--t-fast) var(--ease);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background: var(--bg-2);
+}
+
+.selected,
+.selected:hover {
+  background: var(--acc-sel-dim);
+}
+
+.selected td:first-child {
+  box-shadow: inset 2px 0 0 var(--acc-sel);
+}
+
+.muted td {
+  color: var(--fg-3);
+}
+
+.tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.compact th,
+.compact td {
+  height: 28px;
+  padding: 0 var(--sp-2);
+}
+
+.fill td {
+  width: 100%;
+}

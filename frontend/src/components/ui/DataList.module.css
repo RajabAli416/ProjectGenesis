@@ -1,0 +1,112 @@
+.list {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  column-gap: var(--sp-4);
+  row-gap: 0;
+  font-size: var(--fs-12);
+}
+
+.dense .row {
+  min-height: 24px;
+}
+
+.row {
+  display: contents;
+}
+
+.row > dt,
+.row > dd {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line-0);
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.row:last-child > dt,
+.row:last-child > dd {
+  border-bottom: none;
+}
+
+.label {
+  color: var(--fg-3);
+  white-space: nowrap;
+}
+
+.value {
+  color: var(--fg-1);
+  justify-content: flex-end;
+  text-align: right;
+  min-width: 0;
+  gap: var(--sp-2);
+}
+
+.valueMono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.left .value {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* Readouts: large numeric instrument values */
+.readouts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0;
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-3);
+  background: var(--bg-1);
+  overflow: hidden;
+}
+
+.readout {
+  padding: var(--sp-3) var(--sp-4);
+  border-right: 1px solid var(--line-1);
+  border-bottom: 1px solid var(--line-1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  /* Negative margins collapse the trailing borders on the right/bottom edge */
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+
+.readoutLabel {
+  font-size: var(--fs-11);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--fg-3);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.readoutValue {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-24);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--fg-0);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.readoutUnit {
+  font-size: var(--fs-12);
+  color: var(--fg-3);
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+}
+
+.readoutNote {
+  font-size: var(--fs-11);
+  color: var(--fg-3);
+}

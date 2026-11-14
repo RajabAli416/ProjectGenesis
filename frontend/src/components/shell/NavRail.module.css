@@ -1,0 +1,171 @@
+.rail {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-1);
+  border-right: 1px solid var(--line-1);
+  overflow: hidden;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--bar-h);
+  padding: 0 var(--sp-3);
+  border-bottom: 1px solid var(--line-1);
+  flex: none;
+}
+
+.mark {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  color: var(--fg-2);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.1;
+}
+
+.brandName {
+  font-size: var(--fs-12);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--fg-0);
+}
+
+.brandSub {
+  font-size: var(--fs-10);
+  color: var(--fg-3);
+  letter-spacing: 0.02em;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-2) var(--sp-2);
+  gap: 1px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: var(--r-2);
+  color: var(--fg-2);
+  font-size: var(--fs-12);
+  font-weight: 500;
+  white-space: nowrap;
+  position: relative;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+
+.link:hover {
+  background: var(--bg-2);
+  color: var(--fg-1);
+}
+
+.active,
+.active:hover {
+  background: var(--bg-3);
+  color: var(--fg-0);
+}
+
+.active::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--fg-1);
+  border-radius: 1px;
+}
+
+.linkIcon {
+  flex: none;
+  color: var(--fg-3);
+}
+
+.active .linkIcon {
+  color: var(--fg-1);
+}
+
+.linkLabel {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.linkKey {
+  opacity: 0;
+  transition: opacity var(--t-fast) var(--ease);
+}
+
+.link:hover .linkKey,
+.link:focus-visible .linkKey {
+  opacity: 1;
+}
+
+.footer {
+  padding: var(--sp-2);
+  border-top: 1px solid var(--line-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  flex: none;
+}
+
+.collapseBtn {
+  width: 100%;
+  justify-content: flex-start;
+  color: var(--fg-3);
+  font-weight: 400;
+}
+
+/* Collapsed */
+.collapsed .brandText,
+.collapsed .linkLabel,
+.collapsed .linkKey {
+  display: none;
+}
+
+.collapsed .brand {
+  justify-content: center;
+  padding: 0;
+}
+
+.collapsed .link {
+  justify-content: center;
+  padding: 0;
+}
+
+.collapsed .collapseBtn {
+  justify-content: center;
+}
+
+.collapsed .nav {
+  padding: var(--sp-2) 6px;
+}
+
+.collapsed .active::before {
+  left: -6px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--line-1);
+  margin: var(--sp-2) 4px;
+}

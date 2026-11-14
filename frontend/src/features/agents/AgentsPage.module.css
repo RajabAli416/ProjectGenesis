@@ -1,0 +1,146 @@
+.filters {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex: 1;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.search {
+  flex: 1;
+  min-width: 120px;
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-11);
+  color: var(--fg-3);
+  white-space: nowrap;
+}
+
+.identityGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-4);
+}
+
+.traitList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.traitRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 140px;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-12);
+  color: var(--fg-2);
+}
+
+.lineage {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+.lineageCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.lineageSelf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-3);
+  background: var(--bg-2);
+  min-width: 140px;
+  text-align: center;
+}
+
+.lineageNode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  padding: 7px 10px;
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-2);
+  background: var(--bg-1);
+  font-size: var(--fs-12);
+  color: var(--fg-1);
+  transition: border-color var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease);
+}
+
+.lineageNode:hover {
+  border-color: var(--line-3);
+  background: var(--bg-2);
+}
+
+.lineageEmpty {
+  font-size: var(--fs-12);
+  color: var(--fg-3);
+  padding: 7px 0;
+}
+
+.memory {
+  display: flex;
+  flex-direction: column;
+}
+
+.memoryItem {
+  display: grid;
+  grid-template-columns: 72px 76px minmax(0, 1fr) 100px;
+  gap: var(--sp-3);
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line-0);
+  font-size: var(--fs-12);
+}
+
+.memoryItem:last-child {
+  border-bottom: none;
+}
+
+.memoryTick {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--fg-3);
+  font-size: var(--fs-11);
+}
+
+.memorySummary {
+  color: var(--fg-1);
+}
+
+.memorySource {
+  margin-left: var(--sp-2);
+  vertical-align: middle;
+}
+
+@media (max-width: 900px) {
+  .filters {
+    flex-basis: 100%;
+  }
+  .lineage {
+    grid-template-columns: 1fr;
+  }
+  .lineageSelf {
+    order: -1;
+  }
+  .memoryItem {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+  .memoryItem > :nth-child(2),
+  .memoryItem > :nth-child(4) {
+    display: none;
+  }
+}

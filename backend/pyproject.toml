@@ -1,0 +1,21 @@
+[project]
+name = "recursion-backend"
+version = "0.1.0"
+description = "RECURSION artificial-life research platform — simulation backend"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 200
+target-version = "py312"
+exclude = [".venv", "app/persistence/migrations/versions"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "PLC"]
+# PLC0415: lazy imports are used deliberately to break action <-> research/recursion cycles.
+ignore = ["E501", "B008", "B904", "SIM102", "SIM105", "SIM108", "SIM110", "UP007", "UP047", "PLC0415"]

@@ -1,0 +1,246 @@
+/* Field wrapper */
+.field {
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--sp-4);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line-0);
+}
+
+.field:last-child {
+  border-bottom: none;
+}
+
+.fieldLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.fieldName {
+  font-size: var(--fs-12);
+  color: var(--fg-1);
+}
+
+.fieldHint {
+  font-size: var(--fs-11);
+  color: var(--fg-3);
+}
+
+.fieldControl {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .field {
+    grid-template-columns: 1fr;
+    gap: var(--sp-2);
+  }
+  .fieldControl {
+    justify-content: flex-start;
+  }
+}
+
+/* Inputs */
+.input {
+  height: var(--ctl-h);
+  padding: 0 8px;
+  border-radius: var(--r-2);
+  border: 1px solid var(--line-2);
+  background: var(--bg-0);
+  color: var(--fg-1);
+  font-size: var(--fs-12);
+  min-width: 0;
+  width: 100%;
+  transition: border-color var(--t-fast) var(--ease);
+}
+
+.input::placeholder {
+  color: var(--fg-4);
+}
+
+.input:hover {
+  border-color: var(--line-3);
+}
+
+.input:focus-visible {
+  border-color: var(--acc-sel);
+  outline: none;
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.inputMono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.inputSm {
+  height: var(--ctl-h-sm);
+  font-size: var(--fs-11);
+}
+
+.inputNarrow {
+  width: 110px;
+  text-align: right;
+}
+
+.inputWithIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.inputWithIcon > svg {
+  position: absolute;
+  left: 8px;
+  color: var(--fg-3);
+  pointer-events: none;
+}
+
+.inputWithIcon > .input {
+  padding-left: 28px;
+}
+
+/* Select */
+.selectWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.select {
+  appearance: none;
+  padding-right: 26px;
+  cursor: pointer;
+}
+
+.selectWrap > svg {
+  position: absolute;
+  right: 7px;
+  color: var(--fg-3);
+  pointer-events: none;
+}
+
+/* Toggle */
+.toggle {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: var(--r-pill);
+  background: var(--bg-4);
+  border: 1px solid var(--line-2);
+  transition: background-color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+  flex: none;
+}
+
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--fg-2);
+  transition: transform var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease);
+}
+
+.toggleOn {
+  background: var(--acc-live-dim);
+  border-color: var(--acc-live);
+}
+
+.toggleOn::after {
+  transform: translateX(12px);
+  background: var(--acc-live);
+}
+
+.toggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Slider */
+.sliderRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  width: 100%;
+  max-width: 320px;
+}
+
+.slider {
+  appearance: none;
+  flex: 1;
+  height: 2px;
+  background: var(--line-2);
+  border-radius: var(--r-pill);
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--fg-1);
+  border: 1px solid var(--bg-0);
+  cursor: pointer;
+  transition: background-color var(--t-fast) var(--ease);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: var(--fg-0);
+}
+
+.slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--fg-1);
+  border: 1px solid var(--bg-0);
+  cursor: pointer;
+}
+
+.slider:focus-visible::-webkit-slider-thumb {
+  outline: 1px solid var(--acc-sel);
+  outline-offset: 2px;
+}
+
+.sliderValue {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-12);
+  color: var(--fg-1);
+  min-width: 4.5em;
+  text-align: right;
+}
+
+/* Kbd */
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: var(--r-1);
+  border: 1px solid var(--line-2);
+  background: var(--bg-2);
+  color: var(--fg-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-10);
+  line-height: 1;
+}

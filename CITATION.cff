@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "RECURSION: an artificial-life research platform"
+message: "If you use this software in research, please cite it."
+type: software
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/REPLACE_OWNER/REPLACE_REPO"
+abstract: >-
+  A local artificial-life observatory. A deterministic mechanics engine advances
+  each universe; language models propose actions but never write world state.
+  Experiments are paired control/treatment runs, and hypotheses carry a
+  provenance classification so prompt-exposed claims are not reported as
+  discoveries.
+authors:
+  - name: "Replace with the citing authors"
+date-released: "2026-11-14"

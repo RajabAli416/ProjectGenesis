@@ -1,0 +1,101 @@
+.shell {
+  display: grid;
+  grid-template-columns: var(--rail-w) minmax(0, 1fr);
+  grid-template-rows: var(--bar-h) minmax(0, 1fr) var(--status-h);
+  grid-template-areas:
+    'rail bar'
+    'rail main'
+    'rail status';
+  height: 100%;
+  background: var(--bg-0);
+  transition: grid-template-columns var(--t-base) var(--ease);
+}
+
+.railCollapsed {
+  grid-template-columns: var(--rail-w-collapsed) minmax(0, 1fr);
+}
+
+.rail {
+  grid-area: rail;
+  min-height: 0;
+}
+
+.bar {
+  grid-area: bar;
+}
+
+.main {
+  grid-area: main;
+  min-height: 0;
+  min-width: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.status {
+  grid-area: status;
+}
+
+/* Scrollable section surface used by most routes */
+.page {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: var(--sp-5) var(--sp-6) var(--sp-8);
+}
+
+.pageFlush {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageInner {
+  max-width: 1480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-1);
+  flex-wrap: wrap;
+}
+
+.pageTitle {
+  font-size: var(--fs-18);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--fg-0);
+  line-height: var(--lh-tight);
+}
+
+.pageLede {
+  margin-top: 4px;
+  font-size: var(--fs-12);
+  color: var(--fg-3);
+}
+
+.pageActions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .shell,
+  .railCollapsed {
+    grid-template-columns: var(--rail-w-collapsed) minmax(0, 1fr);
+  }
+  .page {
+    padding: var(--sp-4);
+  }
+}

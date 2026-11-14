@@ -1,0 +1,103 @@
+/*
+  RECURSION design tokens.
+  Monochrome instrument surface with a handful of muted semantic accents.
+  Every accent has exactly one meaning; do not reuse them decoratively.
+*/
+:root {
+  color-scheme: dark;
+
+  /* Surfaces — from the viewport floor upward */
+  --bg-0: #0a0b0d;
+  --bg-1: #101114;
+  --bg-2: #15171b;
+  --bg-3: #1b1d22;
+  --bg-4: #22252b;
+
+  /* Lines */
+  --line-0: rgba(255, 255, 255, 0.04);
+  --line-1: rgba(255, 255, 255, 0.065);
+  --line-2: rgba(255, 255, 255, 0.11);
+  --line-3: rgba(255, 255, 255, 0.18);
+
+  /* Foreground */
+  --fg-0: #f2f3f5;
+  --fg-1: #e1e3e7;
+  --fg-2: #9a9ea6;
+  --fg-3: #666b74;
+  --fg-4: #42464e;
+
+  /* Semantic accents (muted) */
+  --acc-live: #7f9f86;   /* running / alive / healthy */
+  --acc-attn: #c2a25f;   /* paused / attention / pending */
+  --acc-crit: #b4705f;   /* critical / terminated / refuted */
+  --acc-sel: #6f98a3;    /* selection / focus / interactive emphasis */
+  --acc-depth: #8a85a3;  /* nested-universe depth only */
+
+  --acc-live-dim: rgba(127, 159, 134, 0.16);
+  --acc-attn-dim: rgba(194, 162, 95, 0.16);
+  --acc-crit-dim: rgba(180, 112, 95, 0.16);
+  --acc-sel-dim: rgba(111, 152, 163, 0.16);
+  --acc-depth-dim: rgba(138, 133, 163, 0.16);
+
+  /* Typography */
+  --font-sans: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --fs-10: 10px;
+  --fs-11: 11px;
+  --fs-12: 12px;
+  --fs-13: 13px;
+  --fs-15: 15px;
+  --fs-18: 18px;
+  --fs-24: 24px;
+  --fs-32: 32px;
+
+  --lh-tight: 1.2;
+  --lh-normal: 1.45;
+
+  --ls-caps: 0.08em;
+
+  /* Spacing — 4px grid */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+
+  /* Shape */
+  --r-1: 3px;
+  --r-2: 4px;
+  --r-3: 6px;
+  --r-pill: 999px;
+
+  /* Controls */
+  --ctl-h: 28px;
+  --ctl-h-sm: 24px;
+
+  /* Layout */
+  --rail-w: 200px;
+  --rail-w-collapsed: 48px;
+  --bar-h: 44px;
+  --status-h: 26px;
+  --inspector-w: 320px;
+
+  /* Motion */
+  --t-fast: 120ms;
+  --t-base: 160ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Elevation (used sparingly) */
+  --shadow-drawer: -8px 0 24px rgba(0, 0, 0, 0.35);
+  --shadow-popover: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-fast: 0ms;
+    --t-base: 0ms;
+  }
+}

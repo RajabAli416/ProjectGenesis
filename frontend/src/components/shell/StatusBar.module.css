@@ -1,0 +1,45 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  height: var(--status-h);
+  padding: 0 var(--sp-4);
+  background: var(--bg-1);
+  border-top: 1px solid var(--line-1);
+  font-size: var(--fs-11);
+  color: var(--fg-3);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.sample {
+  color: var(--acc-attn);
+}
+
+.sep {
+  width: 1px;
+  height: 12px;
+  background: var(--line-2);
+}
+
+@media (max-width: 760px) {
+  .hideNarrow {
+    display: none;
+  }
+}

@@ -1,0 +1,95 @@
+.layout {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: var(--sp-6);
+  align-items: start;
+}
+
+.toc {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tocLink {
+  display: block;
+  padding: 6px 8px;
+  border-radius: var(--r-2);
+  font-size: var(--fs-12);
+  color: var(--fg-3);
+  transition: color var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease);
+}
+
+.tocLink:hover {
+  color: var(--fg-1);
+  background: var(--bg-2);
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  min-width: 0;
+}
+
+.group {
+  scroll-margin-top: var(--sp-4);
+}
+
+.providers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.provider {
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-3);
+  background: var(--bg-0);
+  padding: var(--sp-2) var(--sp-3);
+}
+
+.providerHead {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 4px 0 8px;
+  border-bottom: 1px solid var(--line-0);
+}
+
+.providerLabel {
+  flex: 1;
+  font-weight: 500;
+}
+
+.providerLabel input {
+  font-weight: 500;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.dirty {
+  color: var(--acc-attn);
+  font-size: var(--fs-12);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .toc {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
