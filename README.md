@@ -102,8 +102,8 @@ Do not force-add those paths. `.env.example` and `.env.development` contain no s
 
 ## Citation
 
-See `CITATION.cff`. Replace the author and repository fields before you cite a fork.
+See `CITATION.cff`.
 
 ## License
 
-[MIT](LICENSE). Replace the copyright line if you publish under your own name.
+[MIT](LICENSE). Copyright 2026 Rajab Ali Abbas.
